@@ -6,21 +6,26 @@
         "build": "vite build",
         "dev": "vite"
     },
+    "dependencies": {
+        "axios": "^1.9.0"
+    },
     "devDependencies": {
         "@headlessui/react": "^2.2.9",
         "@inertiajs/react": "^2.2.15",
         "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/postcss": "^4.3.1",
         "@tailwindcss/vite": "^4.1.12",
         "@types/react": "^19.1.13",
         "@types/react-dom": "^19.1.9",
         "@vitejs/plugin-react": "^5.0.2",
-        "autoprefixer": "^10.4.21",
+        "autoprefixer": "^10.5.0",
         "laravel-vite-plugin": "^3.1.0",
-        "postcss": "^8.5.6",
+        "playwright": "^1.61.0",
+        "postcss": "^8.5.15",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "tailwindcss": "^4.1.12",
         "typescript": "^5.9.2",
-        "vite": "^8.0.1"
+        "vite": "^8.0.16"
     }
 }

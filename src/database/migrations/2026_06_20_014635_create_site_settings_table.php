@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('site_settings', function (Blueprint $table) {
+            $table->id();
             $table->string('store_name');
 
             $table->string('phone')->nullable();
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->text('google_map_url')->nullable();
 
             $table->text('adsense_footer')->nullable();
+            $table->timestamps();
         });
     }
 

@@ -1,3 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    --color-primary:      #8b1a1a;
+    --color-primary-dark: #6b1111;
+    --color-accent:       #c04f37;
+    --color-gold:         #b8860b;
+    --color-gold-light:   #e8c96a;
+    --color-cream:        #fefdf6;
+    --color-warm:         #f5ede0;
+    --color-dark:         #2d1810;
+    --color-text:         #3a2216;
+
+    --font-sans:  'Noto Sans JP', 'Hiragino Sans', sans-serif;
+    --font-serif: 'Shippori Mincho', 'Hiragino Mincho Pro', serif;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-cream);
+        color: var(--color-text);
+    }
+}

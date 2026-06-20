@@ -12,6 +12,9 @@ class SiteSetting extends Model
         'address',
         'description',
         'business_hours',
+        'holiday',
+        'instagram_url',
+        'line_url',
         'google_map_url',
         'adsense_footer',
     ];
