@@ -61,7 +61,7 @@ const KODAWARI = [
 ];
 
 export default function Top({ menus, galleries, setting, url }) {
-    const heroBg    = galleries[0] ? `/storage/${galleries[0].image}` : null;
+    const heroBg = '/images/hero.jpg';
     const conceptBg = galleries[3] ? `/storage/${galleries[3].image}` : (galleries[1] ? `/storage/${galleries[1].image}` : null);
 
     const restaurantSchema = {
