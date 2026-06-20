@@ -1,0 +1,70 @@
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: shinryu-nginx
+
+    ports:
+      - "8000:80"
+
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+
+    container_name: shinryu-php
+
+    volumes:
+      - ./src:/var/www/html
+
+    working_dir: /var/www/html
+
+  mysql:
+    image: mysql:8.4
+
+    container_name: shinryu-mysql
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shinryu
+      MYSQL_USER: shinryu
+      MYSQL_PASSWORD: password
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  node:
+    image: node:22
+
+    container_name: shinryu-node
+
+    working_dir: /var/www/html
+
+    volumes:
+      - ./src:/var/www/html
+
+    tty: true
+
+  mailpit:
+    image: axllent/mailpit
+
+    container_name: shinryu-mailpit
+
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  mysql-data:
