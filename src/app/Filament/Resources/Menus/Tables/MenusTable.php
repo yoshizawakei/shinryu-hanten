@@ -15,12 +15,13 @@ class MenusTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('sort_order')
             ->columns([
                 ImageColumn::make('image')
                     ->label('画像'),
 
                 TextColumn::make('name')
-                    ->label('メニュー名')
+                    ->label('商品名')
                     ->searchable()
                     ->sortable(),
 
@@ -38,8 +39,9 @@ class MenusTable
                     ->sortable(),
 
                 TextColumn::make('created_at')
-                    ->label('登録日')
-                    ->dateTime('Y/m/d'),
+                    ->label('作成日')
+                    ->dateTime('Y-m-d')
+                    ->sortable(),
             ])
             ->filters([
                 //

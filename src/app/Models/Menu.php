@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'image',
+        'is_recommended',
+        'sort_order',
+    ];
 }

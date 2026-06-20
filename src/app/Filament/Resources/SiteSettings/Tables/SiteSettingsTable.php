@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources\SiteSettings\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class SiteSettingsTable
@@ -13,18 +12,18 @@ class SiteSettingsTable
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
+                TextColumn::make('store_name')
+                    ->label('店舗名'),
+
+                TextColumn::make('phone')
+                    ->label('電話番号'),
+
+                TextColumn::make('updated_at')
+                    ->label('更新日')
+                    ->dateTime('Y-m-d H:i'),
             ])
             ->recordActions([
                 EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ]);
     }
 }
